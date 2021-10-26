@@ -10,23 +10,34 @@
   <ion-searchbar color="light" placeholder="Buscar"></ion-searchbar>
 
   <ion-list>
+    <ion-item-sliding>
     <ion-item lines="full">
+
       <ion-thumbnail slot="start">
         <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/apZJb9kdHXhPu6oDTeztDSd41zw.jpg">
       </ion-thumbnail>
+
       <ion-label>
         <div>
           <h1>Venom (2018)</h1>
           <p>14 05/10/2018 (BR)</p>
           <p>Ficção científica, Ação 1h 52m</p>
-
       </div>
       </ion-label>
+
       <ion-chip color="success" outline>
          <ion-label>76%</ion-label>
        </ion-chip>
+
     </ion-item>
 
+    <ion-item-options side="end">
+      <ion-item-option color="laranja" (click)="exibirAlertaFavorito()">
+        <ion-icon slot="icon-only" name="star"></ion-icon>
+
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
 
   </ion-list>
 
