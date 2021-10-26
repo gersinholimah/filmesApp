@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import { IFilme } from '../models/iFilme.model';
 
 @Component({
   selector: 'app-tab1',
@@ -8,6 +9,19 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+
+titulo = 'Vídeos';
+listaVideos: IFilme[] = [
+  {
+      nome: 'Venom (2018)',
+      lancamento: '14 05/10/2018',
+      duracao: '1h 50m',
+      classificacao: 76,
+      cartaz: 'https://www.themoviedb.org/t/p/w220_and_h330_face/apZJb9kdHXhPu6oDTeztDSd41zw.jpg',
+      generos: ['Ação', 'Aventura', 'Terror']
+  }
+];
+
 
   constructor(
     public alertController: AlertController,

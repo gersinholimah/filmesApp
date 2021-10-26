@@ -4,8 +4,10 @@ ion-item{
 
   ion-thumbnail{
     height: 100%;
+    margin-inline-end:10px;
   }
-  h1 {font-weight: bold;
+  h1 {
+    font-weight: bold;
   font-size: 0.8rem;
 }
   p {font-size: 0.6rem;}
@@ -14,5 +16,10 @@ color: rgba(100, 100, 100, 0.867);
   }
   ion-chip{
     padding-inline:3px ;
+  }
+  ion-badge {
+    font-weight: 300;
+    font-size: 0.6rem;
+    margin-right:2px ;
   }
 }
