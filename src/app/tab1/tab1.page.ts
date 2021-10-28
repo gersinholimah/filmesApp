@@ -1,7 +1,9 @@
+import { DadosService } from './../services/dados.service';
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { IFilme } from '../models/iFilme.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -18,14 +20,23 @@ listaVideos: IFilme[] = [
       duracao: '1h 50m',
       classificacao: 76,
       cartaz: 'https://www.themoviedb.org/t/p/w220_and_h330_face/apZJb9kdHXhPu6oDTeztDSd41zw.jpg',
-      generos: ['Ação', 'Aventura', 'Terror']
+      generos: ['Ação', 'Aventura', 'Terror'],
+      pagina: '/mortal-kombat'
   }
 ];
 
 
   constructor(
     public alertController: AlertController,
-    public toastController: ToastController) {}
+    public toastController: ToastController,
+    public dadosService: DadosService,
+    public route: Router) {}
+
+exibirFilme(filme: IFilme){
+  this.dadosService.guardarDados('filme', filme); // guardar o filme no serviço de dados
+this.route.navigateByUrl('/dados-filme');
+}
+
 
   async exibirAlertaFavorito() {
     const alert = await this.alertController.create({
